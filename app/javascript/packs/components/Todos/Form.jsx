@@ -24,6 +24,7 @@ class TodoForm extends React.Component {
                     title: this.titleRef.current.value,
                     body: this.bodyRef.current.value,
                     complete: false,
+                    user_name: ""
                 },
             })
             .then(response => {

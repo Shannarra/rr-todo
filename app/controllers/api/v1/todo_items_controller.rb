@@ -20,6 +20,7 @@ class Api::V1::TodoItemsController < ApplicationController
 
   def create
     @todo_item = current_user.todo_items.build(item_params)
+    @todo_item.user_name = current_user.name if @todo_item.user_name.nil? or @todo_item.user_name.blank?
 
     if authorized?
       respond_to do |fmt|
@@ -64,7 +65,7 @@ class Api::V1::TodoItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:todo_item).permit(:title, :body, :complete)
+    params.require(:todo_item).permit(:title, :body, :complete, :user_name)
   end
 
   def set_todo_item
