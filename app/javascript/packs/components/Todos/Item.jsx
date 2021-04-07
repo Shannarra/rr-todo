@@ -54,8 +54,11 @@ class TodoItem extends React.Component {
                     complete: this.completeRef.current.checked,
                 }
             })
-            .then(_ => {})
-            .catch(err => console.error(`Update error: ${err.message}`));
+            .then(_ => this.props.errorClearer())
+            .catch(err => {
+                console.error(`Update error: ${err.message}`)
+                this.props.errorHandler(err)
+            });
     });
 
 
@@ -118,7 +121,9 @@ class TodoItem extends React.Component {
 TodoItem.propTypes = {
     todoItem: PropTypes.object.isRequired,
     getTodoItems: PropTypes.func.isRequired,
-    hideCompletedItem: PropTypes.bool.isRequired
+    hideCompletedItem: PropTypes.bool.isRequired,
+    errorHandler: PropTypes.func.isRequired,
+    errorClearer: PropTypes.func.isRequired
 }
 
 

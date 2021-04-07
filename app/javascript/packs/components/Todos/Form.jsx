@@ -29,9 +29,11 @@ class TodoForm extends React.Component {
             .then(response => {
                 const todoItem = response.data
                 this.props.createItem(todoItem)
+                this.props.errorClearer();
             })
             .catch(error => {
                 console.log(error)
+                this.props.errorHandler(error)
             })
         e.target.reset()
     }
@@ -76,4 +78,6 @@ export default TodoForm
 
 TodoForm.propTypes = {
     createItem: PropTypes.func.isRequired,
+    errorHandler: PropTypes.func.isRequired,
+    errorClearer: PropTypes.func.isRequired
 }
