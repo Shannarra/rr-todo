@@ -3,14 +3,14 @@
 ## A React-On-Rails TODO fullstack application
 
 ## Dependencies
-### 1. Backend - click [here]() for details
+### 1. Backend - click [here](https://github.com/Shannarra/rr-todo/blob/master/Gemfile) for details
 1. Ruby - 2.6.6 or higher  
 2. Rails - 6.1.3.1 or higher
 3. Additional gem dependencies  
 3.1 Faker  
 3.2 Devise  
    
-### 2. Front-end - click [here]() for details
+### 2. Front-end - click [here](https://github.com/Shannarra/rr-todo/blob/master/package.json) for details
 1. Node v.10+, React + prop-types
 2. axios
 3. lodash
