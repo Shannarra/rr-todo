@@ -66,7 +66,7 @@ class TodoApp extends React.Component {
     }
 
     errorClearer() {
-        this.setState({error: null})
+        this.setState({error: null })
     }
 
     render() {
@@ -77,6 +77,18 @@ class TodoApp extends React.Component {
                 {this.state.loading
                     ? <Spinner />
                     :<React.Fragment>
+                        <div>
+
+                            <h1>
+                                Hello,
+                                {
+                                    this.state.items[0].user_name.split(' ')
+                                    ? this.state.items[0].user_name.split(' ')[0]
+                                    : this.state.items[0].user_name
+                                }!
+                            </h1>
+                            <p>You can add a new item here </p>
+                        </div>
                         <TodoForm createItem={this.createItem} errorHandler={this.errorHandler} errorClearer={this.errorClearer} />
                         <TodoItems isGoingToToggleCompletedItems={this.state.hideCompletedItems} toggleCompletedItems={this.toggleCompletedTodos}>
                             {this.state.items.map(item => (
