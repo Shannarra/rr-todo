@@ -1,24 +1,32 @@
-# README
+# rr-todo
+[![Heroku](https://heroku-badge.herokuapp.com/?app=reactive-rails-todo)](https://reactive-rails-todo.herokuapp.com/)
+## A React-On-Rails TODO fullstack application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+### 1. Backend - click [here]() for details
+1. Ruby - 2.6.6 or higher  
+2. Rails - 6.1.3.1 or higher
+3. Additional gem dependencies  
+3.1 Faker  
+3.2 Devise  
+   
+### 2. Front-end - click [here]() for details
+1. Node v.10+, React + prop-types
+2. axios
+3. lodash
+4. bootstrap + jquery
 
-Things you may want to cover:
+### 3. Database
+1. Postgresql 13
 
-* Ruby version
 
-* System dependencies
+## Running the app
 
-* Configuration
+After installing all gems successfully using `bundle install` and running the database setup (below)
+we can run the app by typing `rails s` and navigating to [localhost](http://localhost:3000/)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```rails
+rake db:setup
+rake db:migrate
+rake db:seed /*(optional)*/
+```
