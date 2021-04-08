@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
+
   authenticated :user do
     root "pages#my_items", as: :authenticated_root
     resources :users
 
   end
-
   root 'pages#home'
 
   namespace :api, defaults: {format: :json} do

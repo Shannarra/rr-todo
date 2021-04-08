@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="target-section documentation-section">
+  <h1 class="documentation-section-title">Hello.</h1>
+  <p class="documentation-section-subtitle">
+    If you have an account why not
+    <%= link_to("Log in", new_user_session_path) %>
+    or alternatively, you can
+    <%= link_to("Sign up", '/users/sign_up') %>
+    now, it's free!
+  </p>
+</div>
