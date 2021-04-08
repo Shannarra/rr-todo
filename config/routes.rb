@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   authenticated :user do
     root "pages#my_items", as: :authenticated_root
+    resources :users
+
   end
 
   root 'pages#home'

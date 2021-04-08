@@ -1,0 +1,10 @@
+<div class="container container-fluid">
+  <h1>Hi, <%= current_user.name %>!</h1>
+  <br>
+  <p class="card-subtitle">Here's a list of your items (<%= current_user.todo_items.count %>):</p>
+
+  <% current_user.todo_items.each do |item| %>
+    <%= item.title.capitalize %> <br>
+  <% end %>
+
+</div>
